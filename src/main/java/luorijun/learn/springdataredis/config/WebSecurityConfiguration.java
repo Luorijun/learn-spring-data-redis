@@ -20,7 +20,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().ignoringAntMatchers("/h2-console/**");
+        http.csrf().ignoringAntMatchers("/api/**", "/h2-console/**");
         http.headers().frameOptions().sameOrigin();
     }
 
