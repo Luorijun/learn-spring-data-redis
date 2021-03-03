@@ -13,8 +13,8 @@ public class ShopOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Embedded
-    private GoodsInfo goods;
+    @ManyToOne
+    private ShopGoods goods;
 
     private int count;
     private float total;
