@@ -19,12 +19,18 @@ public class SecKillServiceImpl implements SecKillService {
         this.orderRepository = orderRepository;
     }
 
+    /**
+     * 秒杀：使用数据库和悲观锁
+     *
+     * @param id 商品 id
+     * @return 购买成功后的订单 id
+     */
     @Transactional
     @Override
-    public int secKill(int id) {
+    public int secKillWithPessimisticLock(int id) {
 
         // 检查商品
-        var query = goodsRepository.findById(id);
+        var query = goodsRepository.findByIdWithWriteLock(id);
         if (query.isEmpty()) {
             throw new RuntimeException("商品不存在");
         }

@@ -24,7 +24,7 @@ public class SecKillRestController {
     public ResponseEntity<String> secKill(@RequestParam int goods) {
         var message = "秒杀成功，已经创建订单：";
         try {
-            var order = service.secKill(goods);
+            var order = service.secKillWithPessimisticLock(goods);
             message += order;
         } catch (RuntimeException exception) {
             message = "秒杀失败：" + exception.getMessage();
