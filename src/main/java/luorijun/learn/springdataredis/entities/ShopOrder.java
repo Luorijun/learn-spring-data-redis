@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Record {
+public class ShopOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
