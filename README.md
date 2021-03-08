@@ -16,9 +16,14 @@
 
 - [X] 纯数据库，悲观锁实现
 - [ ] 加入 redis 缓存
+
 ## 如何运行
 
 暂时没有其他依赖，直接怼就行
 
 ## 性能测试
+
+mysql & 悲观锁:
+
+![mysql & 悲观锁](docs/images/database.png)
 
