@@ -9,7 +9,7 @@
 - spring jpa/hibernate
 - redis
 - rabbitmq
-- h2
+- mysql
 - thymeleaf
 
 ## 路线图
