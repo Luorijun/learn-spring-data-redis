@@ -19,12 +19,6 @@ public class SecKillServiceImpl implements SecKillService {
         this.orderRepository = orderRepository;
     }
 
-    /**
-     * 秒杀：使用数据库和悲观锁
-     *
-     * @param id 商品 id
-     * @return 购买成功后的订单 id
-     */
     @Transactional
     @Override
     public int secKillWithPessimisticLock(int id) {
@@ -54,5 +48,11 @@ public class SecKillServiceImpl implements SecKillService {
 
         // 返回订单编号
         return order.getId();
+    }
+
+    @Override
+    public int secKillWithDistributedLock(int id) {
+
+        return 0;
     }
 }
